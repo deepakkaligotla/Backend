@@ -6,7 +6,7 @@ const utils = require('./utils')
 const router = express.Router()
 
 router.post('/send_otp_using_twilio', (req, res) => {
-  const twilio = new Twilio("ACf5b01a7816eb33397ab525841387f706", process.env.TWILIO_AUTH_TOKEN);
+  const twilio = new Twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
   twilio.messages.create({
     body: 'Message from Twilio',
     to: '+919381640235',
