@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex; 
+    flex: 1;
+    position: sticky;
+    position: fixed;
+    top:0; 
+    height: 50px; 
+    width: 100%;
+}
+
+.header-container {
+    display: flex; 
+    flex-direction:row; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    margin: 2px;
+}
+
+main {
+    display: flex; 
+    flex: 1; 
+    width: 100%; 
+    height: max-content;
+}
+
+.main-container {
+    display: flex; 
+    flex-direction:column; 
+    width: 100%;
+    height: 100%; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 2px;
+}
+
+footer {
+    flex: 1; 
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex; 
+    flex-direction:row; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    margin: 2px;
+}
+
+.login-container {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 50px;
+    width: 400px;
+}
+
+#timer-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#progress-canvas {
+    display: inline-block;
+}
+
+.otp-input {
+    padding: 3px;
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: xx-large;
+}

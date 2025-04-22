@@ -1,0 +1,26 @@
+{
+  "name": "otp_email_textsms_whatsapp",
+  "version": "1.0.0",
+  "description": "Send OTP through channels like Email, TextSMS & Whatsapp and verify authentication to login. MFA(Multi Factor Authentication)",
+  "main": "index.html",
+  "scripts": {
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deepak Kaligotla",
+  "license": "ISC",
+  "dependencies": {
+    "@material/web": "^1.1.1",
+    "axios": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "material-components-web": "^14.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nexmo": "^2.9.1",
+    "nodemailer": "^6.9.8",
+    "twilio": "^4.20.1"
+  }
+}

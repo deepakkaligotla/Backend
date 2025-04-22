@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OTP App</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+
+    <meta name="description" content="OTP Tool">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Deepak Kaligotla">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Custom CSS & JS Styles -->
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="container">
+                <nav
+                    class="navbar sticky-top fixed-top bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://kaligotla.in/img/logo.png" alt="Logo" width="30" height="24"
+                                class="d-inline-block align-text-top">
+                            <span class="navbar-brand mb-0 h1">Kaligotla.in</span>
+                        </a>
+                        <button class="navbar-toggler btn btn-outline-success me-2" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                            aria-labelledby="offcanvasDarkNavbarLabel" style="width: fit-content;">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">OTP Tool</h5>
+                                <button type="button btn btn-outline-success me-2" class="btn-close btn-close-white"
+                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link btn btn-outline-success me-2 active" aria-current="page"
+                                            href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link btn btn-outline-success me-2" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link btn btn-outline-success me-2 dropdown-toggle" href="#"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item btn btn-sm btn-outline-secondary"
+                                                    href="#">Action</a></li>
+                                            <li><a class="dropdown-item btn btn-sm btn-outline-secondary"
+                                                    href="#">Another action</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item btn btn-sm btn-outline-secondary"
+                                                    href="#">Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <form class="d-flex justify-content-start" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <button class="btn btn-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container container-fluid">
+            <div class="container text-center login-container">
+                <div class="input-group mb-3">
+                    <span class="badge text-bg-warning" id="basic-addon1" style="font-size:small;">Name</span>
+                    <input type="text" id="firstname" aria-label="First name" class="form-control" placeholder="Firstname">
+                    <input type="text" id="lastname" aria-label="Last name" class="form-control" placeholder="Lastname">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="badge text-bg-warning" id="basic-addon1" style="font-size:small;">Email</span>
+                    <input type="email" id="email" class="form-control" placeholder="Email"
+                        aria-label="Username" />
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="badge text-bg-warning" id="basic-addon1" style="font-size:small;">Password</span>
+                    <input type="password" id="password" class="form-control" placeholder="password"
+                        aria-label="password" />
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="badge text-bg-warning" id="basic-addon1" style="font-size:small;">mobile</span>
+                    <input type="tel" id="mobile" class="form-control" placeholder="mobile" aria-label="mobile" />
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                </div>
+                <button type="button" class="btn btn-outline-success mdc-button" onclick="signup()">
+                    <span class="mdc-button__label">SignUp</span>
+                </button>
+            </div>
+            <div id="otpModal" class="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Enter OTP</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="align-self: center;">
+                            <form>
+                                <div class="mb-3">
+                                    <div id="timer-container">
+                                        <canvas id="progress-canvas" width="100" height="100"></canvas>
+                                        <div id="timer-text"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="otp-input" id="otpInput1" maxlength="1">
+                                    <input type="text" class="otp-input" id="otpInput2" maxlength="1">
+                                    <input type="text" class="otp-input" id="otpInput3" maxlength="1">
+                                    <input type="text" class="otp-input" id="otpInput4" maxlength="1">
+                                    <input type="text" class="otp-input" id="otpInput5" maxlength="1">
+                                    <input type="text" class="otp-input" id="otpInput6" maxlength="1">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="verifyOTP()">Verify OTP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="d-flex flex-wrap align-items-center border-top">
+        <div class="footer-container">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Company, Inc</p>
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="https://kaligotla.in/img/logo.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Custom JS functions -->
+    <script type="text/javascript" src="functions/login.js"></script>
+</body>
+
+</html>
